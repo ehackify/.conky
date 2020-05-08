@@ -1,0 +1,71 @@
+RSS conky by Prasanth c41m----#
+
+# — SETTINGS — #
+maximum_width 400
+background no
+update_interval 1
+cpu_avg_samples 2
+net_avg_samples 2
+double_buffer yes
+no_buffers yes
+text_buffer_size 1024
+imlib_cache_size 0
+
+own_window yes
+own_window_class Conky
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# — BORDER — #
+border_inner_margin 1
+border_outer_margin 1
+border_width 1
+
+# — SIZE — #
+minimum_size 60 660
+#maximum_width 600
+default_bar_size 0 6
+
+# — ALIGNMENT — #
+alignment top_right
+gap_x 360
+gap_y 0
+
+# — GRAPHIC — #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+#default_shade_color 
+#default_outline_color 909090
+#own_window_colour 808080
+
+# — TEXT — #
+use_xft yes
+xftfont sans:size=8
+xftalpha 1.0
+uppercase no
+override_ml_IN_locale no
+default_color 666
+
+
+
+# — Colors — #
+color1 C18C24
+
+own_window_argb_visual yes
+own_window_colour 000000
+own_window_argb_value 0
+minimum_size 60 660
+TEXT
+${font sans:size=12}${color green}eHackify News Updates
+${font sans:size=8}${color 00BEFF}Darknet Feed:
+${font sans:size=6}${color E89909}${execi 300 /root/.conky/my_conky/rss/conky-gh-rss.sh https://www.darknet.org.uk/feed/}
+${font sans:size=8}${color 00BEFF}Kitploit Feed:
+${font sans:size=6}${color E89909}${execi 300 /root/.conky/my_conky/rss/conky-gh-rss.sh https://feeds.feedburner.com/PentestTools}
+${font sans:size=8}${color 00BEFF}THN Feed:
+${font sans:size=6}${color E89909}${execi 300 /root/.conky/my_conky/rss/conky-gh-rss.sh http://feeds.feedburner.com/TheHackersNews}
+${font sans:size=8}${color 00BEFF}Exploit-db Feed:
+${font sans:size=6}${color E89909}${execi 300 /root/.conky/my_conky/rss/conky-gh-rss.sh https://www.exploit-db.com/rss.xml}
+

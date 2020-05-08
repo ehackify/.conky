@@ -1,0 +1,180 @@
+#######################
+# Config for Conky By Prasanth c41m
+#
+########################
+
+########################
+#alignment top_right
+#gap_x 1930
+#gap_y 50
+maximum_width 300
+#minimum_size 0 0
+
+# General
+update_interval 1.0
+double_buffer yes
+draw_outline no
+border_width 0
+default_bar_size 0 5
+
+# Window
+own_window yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_colour 000000
+own_window_transparent yes
+own_window_hints undecorated below sticky skip_taskbar skip_pager
+
+# Specific settings
+cpu_avg_samples 2
+net_avg_samples 2
+no_buffers yes
+
+# Output
+use_spacer none
+use_xft yes
+xftfont Sans:pixelsize=10
+draw_shades no
+uppercase no
+
+# Colors (1 = Text; 2 = Data; 3 = heading)
+color1 AAAAAA
+color2 FFFFFF
+color3 999999
+#color4 00c2ff
+color5 0050BF
+color6 00FF00
+color7 ff1111
+color8 ff1111
+#color9 E89909
+color4 51fd00
+color9 51fd00
+# Templates (1 = Simple; 3 = Filesystem; 4 = Filesystem 2; 5 = Heading; 6 = Core temperature; 7 = Cpu load)
+template1 ${color1}\1 ${color2}\2
+template2 ${color1}\1 ${color2}\2/\3 (\4%)
+template3 ${color1}\1: ${color2}${fs_used \1}/${fs_size \1} (${fs_used_perc \1}%) ${fs_bar \1}
+template4 ${color1}\1: ${color2}$alignr${fs_free \1} ${fs_bar 5,120 \1}
+template5 ${font Sans:regular:size=8}${color4}\1 ${font}${hr 2}
+template6 (core max_temp) e.g. (${template6 'Core\ 0' 60}
+template6 ${execi 2 sensors | grep -A 0 \1 | cut -c18-19}${goto 100}${if_match ${execi 2 sensors | grep -A 0 \1 | cut -c18-21}<\2}${color}${execibar 2 sensors | grep -A 0 \1 | cut -c18-19}${endif}${if_match ${execi 2 sensors | grep -A 0 \1 | cut -c18-21}>=\2}${color red}${execibar 2 sensors | grep -A 0 \1 | cut -c18-19}${color}${endif}${goto 96}${color white} ${execbar echo 0}${color}
+template7 (cpu_no max_temp) e.g. (${template6 cpu1 60}
+template7 ${cpu \1}${goto 100}${if_match ${cpu \1}<\2}${cpubar \1}${endif}${if_match ${cpu \1}>=\2}${color5}${cpubar \1}${color}${endif}${color}${goto 1}${color white}${goto 100}${execbar echo 0}${color}
+
+#####################################
+# Output
+
+own_window_argb_value 0
+alignment top_right
+gap_x 0
+gap_y 0
+minimum_size 60 680
+TEXT
+${exec curl -O https://raw.githubusercontent.com/prasanthc41m/logos/master/eh_logo.png}
+${voffset 20}${goto 0} ${image $HOME/eh_logo.png -s 60x60}
+#${voffset 20}${goto 0}${image https://miro.medium.com/fit/c/128/128/2*6Nz_fY8fRW1qYLTemwl8Rw.jpeg -s 60x60}
+${voffset 0}${goto 70}${color2}${font sans:size=8}Hacking Simplified ${font sans:regular:pixelsize=15}${alignr}${color grey}e${color green}Hackify
+${alignc}${offset -30}${color2}${font sans:pixelsize=48}${time %H:%M:%S}${font}
+${alignc}${color  white}${font sans:pixelsize=11}${time %A %d %B %Y}${font}
+${template5 SYSTEM\ INFORMATION}
+${color1}Hostname: ${color2}$nodename \
+ | ${color1}Kernel: ${color2}$kernel
+${color1}Time: ${color2}${time %Y-%m-%d %H:%M} \
+ | ${color1}Uptime: ${color2}$uptime_short
+${template5 CPU\ AND\ PROCESSES}
+${color1}Usage: ${color2}${cpu}% \
+ | ${color1}Freq: ${color2}$freq_g GHz \
+| ${color1}Load: ${color2}$loadavg
+Cpu  1(%): ${template7 cpu1 99}
+Cpu  2(%): ${template7 cpu2 99}
+Cpu  3(%): ${template7 cpu3 99}
+Cpu  4(%): ${template7 cpu4 99}
+#Cpu  5(%): ${template7 cpu5 99}
+#Cpu  6(%): ${template7 cpu6 99}
+#Cpu  7(%): ${template7 cpu7 99}
+#Cpu  8(%): ${template7 cpu8 99}
+#Core 0(${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C): ${template6 'Core\ 0' 60}
+#Core 1(${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C): ${template6 'Core\ 1' 60}
+#Core 2(${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C): ${template6 'Core\ 2' 60}
+#Core 3(${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C): ${template6 'Core\ 3' 60}
+${color1}Processes: ${color2}$processes \
+ | ${color1}Running: ${color2}$running_processes
+${color white}NAME${alignr}${offset -70}PID${alignr}${offset -38}CPU${alignr}MEM
+${color #FFFFFF}${top name 1}${alignr}${offset -40}${top pid 1}${alignr}${offset -20}${top cpu 1}  ${alignr}${top mem 1}
+${color #EFEFEF}${top name 2}${alignr}${offset -40}${top pid 2}${alignr}${offset -20}${top cpu 2}  ${alignr}${top mem 2}
+${color #DFDFDF}${top name 3}${alignr}${offset -40}${top pid 3}${alignr}${offset -20}${top cpu 3}  ${alignr}${top mem 3}
+${color #CFCFCF}${top name 4}${alignr}${offset -40}${top pid 4}${alignr}${offset -20}${top cpu 4}  ${alignr}${top mem 4}
+${color #BFBFBF}${top name 5}${alignr}${offset -40}${top pid 5}${alignr}${offset -20}${top cpu 5}  ${alignr}${top mem 5}
+${template5 MEMORY\ AND\ SWAP}
+${color1}RAM:  ${color2}$mem/$memmax ($memperc%)
+${if_match $memperc <85 5="" endif="" goto="" if_match="" membar="" memperc="">=85}${goto 5}${color red}${membar 5}${color1}${endif}${goto 5}${execbar echo 0}
+${color1}SWAP: ${color2}$swap/$swapmax ($swapperc%)
+${swapbar 5}
+${template5 NETWORK}
+${if_gw}\
+${template1 Network: Online}
+${template1 DGW: $gw_ip\ ($gw_iface)} \
+| ${template1 Nameserver: $nameserver} 
+${color1}Public IP: ${color9} ${execi 30 wget -q -O - http://ipinfo.io/ip}  ${color2} |   ${color orange} ${execi 30 wget -q -O - http://ipinfo.io/country}  ${color2} | ${color9} ${execi 30 wget -q -O - http://ipinfo.io/org}
+\
+${if_up usb0}
+${template1 Interface: usb0} \
+| ${color1}IP-Address:${color2} ${addr usb0}
+${color1}Speed:${color2} Down: ${downspeedf usb0 } / Up: ${upspeedf usb0 } 
+${downspeedgraph usb0  20,150 000000 FF0000} ${alignr}${color #CFCFCF}\
+${upspeedgraph usb0  20,150 000000 FF0000}
+${endif}\
+\
+${if_up wlan0}
+${template1 Interface: wlan0} \
+| ${color1}IP-Address:${color2} ${addr wlan0}
+#${color1}Public IP: ${color9} ${alignr} ${execi 30 wget -q -O - http://ipinfo.io/ip}  ${color2} |   ${color9} ${execi 30 wget -q -O - http://ipinfo.io/country}
+${color1}ESSID:${color2} ${wireless_essid usb0} \
+| ${color1}Quality:${color2} ${wireless_link_qual_perc usb0}%
+${color1}Speed:${color2} Down: ${downspeedf usb0} / Up: ${upspeedf usb0} 
+${downspeedgraph usb0 20,150 000000 00FF00} ${alignr}${color #CFCFCF}\
+${upspeedgraph usb0 20,150 000000 FF0000}
+${endif} \
+\
+${if_up wlan1}
+${template1 Interface: wlan1} \
+| ${color1}IP-Address:${color2} ${addr wlan1}
+#${color1}Public IP: ${color9} ${alignr} ${execi 30 wget -q -O - http://ipinfo.io/ip}  ${color2} |   ${color9} ${execi 30 wget -q -O - http://ipinfo.io/country}
+${color1}ESSID:${color2} ${wireless_essid usb0} \
+| ${color1}Quality:${color2} ${wireless_link_qual_perc usb0}%
+${color1}Speed:${color2} Down: ${downspeedf usb0} / Up: ${upspeedf usb0} 
+${downspeedgraph usb0 20,150 000000 00FF00} ${alignr}${color #CFCFCF}\
+${upspeedgraph usb0 20,150 000000 FF0000}
+${endif} \
+\
+${if_up tun0}
+${template1 Interface: tun0} \
+| ${color1}IP-Address:${color2} ${addr tun0}
+#${color1}Public IP: ${color9} ${alignr} ${execi 30 wget -q -O - http://ipinfo.io/ip}  ${color2} |   ${color9} ${execi 30 wget -q -O - http://ipinfo.io/country}
+${endif}\
+\
+${if_up eth0}
+${template1 Interface: eth0} \
+| ${color1}IP-Address:${color2} ${addr eth0}
+#${color1}Public IP: ${color9} ${alignr} ${execi 36 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+#${color1}Speed:${color2} Down: ${downspeedf usb0} / Up: ${upspeedf usb0} 
+#${downspeedgraph usb0 20,150 000000 00FF00} ${alignr}${color #CFCFCF}\
+#${upspeedgraph usb0 20,150 000000 FF0000}
+${endif} \
+\
+${else}\
+${template1 Network: Offline}
+${endif}
+#${font sans:bold:size=8}${color4}${exec nvidia-smi -a | grep Product\ Name | awk -F':' '{$2=substr($2,2,length($2)); print $2}'}${font} ${hr 2}${color}
+# Driver Version: ${color2}
+#${voffset 0}${goto 35}${color white}${font Monaco:size=7}Load${goto 105}Temp${alignr 30}Fan speed
+#${voffset 0}${goto 47}${color white}${font Monaco:size=7}${execi 1 aticonfig --odgc --odgt --adapter=0 | egrep -i "load|temperature" | xargs echo | awk '{print $4 "   " $9 "°C "}'}${alignr 28}${execi 1 aticonfig --pplib-cmd "get fanspeed 0" | grep -i result | awk '{print $4}'}
+${template5 FILESYSTEMS}
+#${template4 /}
+#${template4 /home}
+#${template4 /mnt/storage}
+#${template4 /mnt/games}
+#${template4 /tmp}
+${template3 /}
+${template3 /mnt/Data}
+${template5 }
+
