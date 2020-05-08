@@ -12,4 +12,4 @@ rm -rf install_conky.* && wget https://raw.githubusercontent.com/prasanthc41m/.c
 Please backup your existing conky configuration because this replaces it all.
 I'm not respondsible for any damage.
 
-![Alt text](/blob/master/conky.png?raw=true "Screenshot")
+![Alt text](https://github.com/ehackify/.conky/blob/master/conky.png?raw=true "Screenshot")
