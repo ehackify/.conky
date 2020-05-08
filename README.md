@@ -7,9 +7,33 @@ Installation commands are:
 rm -rf install_conky.* && wget https://raw.githubusercontent.com/prasanthc41m/.conky/master/install_conky.sh && bash install_conky.sh
 
 ```
-## Disclaimer
-
-Please backup your existing conky configuration because this replaces it all.
-I'm not respondsible for any damage.
+## Screenshot
 
 ![Alt text](https://github.com/ehackify/.conky/blob/master/conky.png?raw=true "Screenshot")
+
+## Licence
+
+MIT License
+
+Copyright (c) 2020 eHackify
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
