@@ -2,7 +2,13 @@
 #Conky for eHackify
 apt install conky -y
 #
-rm -rf ~/.conky
+if [[ -d "$HOME/.conky/" ]]
+then
+    echo "$(tput setaf 11)Conky exists on your filesystem and making backup as conky_backup.$(tput sgr0)" && mv -f  $HOME/.conky conky_backup
+
+fi
+
+mv -f ~/.conky ~/conky_backup
 git clone https://github.com/prasanthc41m/.conky.git
 chmod -R +x ~/.conky/*
 #
