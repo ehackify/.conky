@@ -10,7 +10,7 @@ crontab <<EOF
 @reboot /root/.conky/conky-startup.sh
 EOF
 #
-echo "Conky will start automatically on every reboot!!!"
+echo "$(tput setaf 12)Conky will start in 20s and added to startup!!!$(tput sgr0)"
 nohup ~/.conky/conky-startup.sh & sleep 01 && exit
 
 
