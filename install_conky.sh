@@ -1,7 +1,7 @@
 #!/bin/bash
 #Conky for eHackify
 apt install conky -y
-rm -rf .conky
+rm -rf ~/.conky
 git clone https://github.com/prasanthc41m/.conky.git
 chmod +x ~/.conky/*
 crontab <<EOF
