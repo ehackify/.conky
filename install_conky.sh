@@ -1,5 +1,5 @@
 #!/bin/bash
-
+Conky for eHackify
 apt install conky -y
 mkdir ~/.conky
 cd ~/.conky 
