@@ -10,8 +10,9 @@ crontab <<EOF
 @reboot /root/.conky/conky-startup.sh
 EOF
 #
-nohup ~/.conky/conky-startup.sh &
 echo "Conky will start automatically on every reboot!!!"
+nohup ~/.conky/conky-startup.sh & sleep 01 && exit
+
 
 
 
