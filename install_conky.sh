@@ -8,7 +8,7 @@ crontab <<EOF
 @reboot /root/.conky/conky-startup.sh
 EOF
 echo "Conky will start automatically on every reboot!!!"
-echo "To start manually run this cmd -> ./conky/conky-startup.sh && sleep 05 && exit"
-#
+sleep 05
+bash ./conky/conky-startup.sh && sleep 05 && exit
 
 
