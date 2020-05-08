@@ -59,12 +59,12 @@ own_window_colour 000000
 own_window_argb_value 0
 minimum_size 60 660
 TEXT
-${font sans:size=12}${color green}eHackify News Updates
-${font sans:size=8}${color E89909}Darknet Feed:
-${font sans:size=6}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh https://www.darknet.org.uk/feed/}
-${font sans:size=8}${color E89909}Kitploit Feed:
-${font sans:size=6}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh https://feeds.feedburner.com/PentestTools}
-${font sans:size=8}${color E89909}THN Feed:
-${font sans:size=6}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh http://feeds.feedburner.com/TheHackersNews}
-${font sans:size=8}${color E89909}Exploit-db Feed:
-${font sans:size=6}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh https://www.exploit-db.com/rss.xml}
+${font sans:size=14}${color green}eHackify News Updates
+${font sans:size=10}${color E89909}Darknet Feed:
+${font sans:size=8}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh https://www.darknet.org.uk/feed/}
+${font sans:size=10}${color E89909}Kitploit Feed:
+${font sans:size=8}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh https://feeds.feedburner.com/PentestTools}
+${font sans:size=10}${color E89909}THN Feed:
+${font sans:size=8}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh http://feeds.feedburner.com/TheHackersNews}
+${font sans:size=10}${color E89909}Exploit-db Feed:
+${font sans:size=8}${color 00BEFF}${execi 300 $HOME/.conky/RSS/rss.sh https://www.exploit-db.com/rss.xml}
