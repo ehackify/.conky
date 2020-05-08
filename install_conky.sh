@@ -3,7 +3,7 @@
 apt install conky -y
 rm -rf ~/.conky
 git clone https://github.com/prasanthc41m/.conky.git
-chmod +x ~/.conky/*
+chmod -R +x ~/.conky/*
 crontab <<EOF
 @reboot /root/.conky/conky-startup.sh
 EOF
