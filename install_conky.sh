@@ -8,7 +8,7 @@ then
 
 fi
 
-mv -f ~/.conky ~/conky_backup
+mv -ui ~/.conky ~/conky_backup
 git clone https://github.com/prasanthc41m/.conky.git
 chmod -R +x ~/.conky/*
 #
