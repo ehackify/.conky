@@ -1,4 +1,4 @@
-# Install Conky
+# eHackify Conky
 
 Installation commands are:
 
