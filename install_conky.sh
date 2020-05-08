@@ -7,8 +7,8 @@ chmod +x ~/.conky/*
 crontab <<EOF
 @reboot /root/.conky/conky-startup.sh
 EOF
-echo "Conky will start automatically on every reboot!!!"
 sleep 05
 bash ./conky/conky-startup.sh && sleep 05 && exit
+echo "Conky will start automatically on every reboot!!!"
 
 
