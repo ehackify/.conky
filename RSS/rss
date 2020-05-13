@@ -59,7 +59,7 @@ own_window_colour 000000
 own_window_argb_value 0
 minimum_size 60 660
 TEXT
-${font sans:size=14}${color gray}e${color green}Hackify ${font sans:size=12}${color white}News Updates
+${font sans:size=14}${color gray}e${color green}News ${font sans:size=12}${color white}Updates
 ${font sans:size=10}${color E89909}Darknet Feed:
 ${font sans:size=8}${color white}${execi 300 $HOME/.conky/RSS/rss.sh https://www.darknet.org.uk/feed/}
 ${font sans:size=10}${color E89909}Kitploit Feed:
