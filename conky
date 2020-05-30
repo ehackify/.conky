@@ -82,8 +82,9 @@ ${color1}Time: ${color2}${time %Y-%m-%d %H:%M} \
  | ${color1}Uptime: ${color2}$uptime_short
 ${template5 CPU\ AND\ PROCESSES}
 ${color1}Usage: ${color2}${cpu}% \
- | ${color1}Freq: ${color2}$freq_g GHz \
-| ${color1}Load: ${color2}$loadavg
+| ${color1}Freq: ${color2}$freq_g GHz \
+| ${color1}Temp: ${color2}${hwmon 0 temp 1}°C  \
+| ${color1}Load: ${color2}$loadavg 
 Cpu  1(%): ${template7 cpu1 99}
 Cpu  2(%): ${template7 cpu2 99}
 Cpu  3(%): ${template7 cpu3 99}
@@ -161,6 +162,16 @@ ${template1 Interface: eth0} \
 #${upspeedgraph usb0 20,150 000000 FF0000}
 ${endif} \
 \
+${if_up eth1}
+${template1 Interface: eth1} \
+| ${color1}IP-Address:${color2} ${addr eth1}
+#${color1}Public IP: ${color9} ${alignr} ${execi 36 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+#${color1}Speed:${color2} Down: ${downspeedf eth1} / Up: ${upspeedf eth1} 
+#${downspeedgraph eth1 20,150 000000 00FF00} ${alignr}${color #CFCFCF}\
+#${upspeedgraph eth1 20,150 000000 FF0000}
+${endif} \
+\
+
 ${else}\
 ${template1 Network: Offline}
 ${endif}
