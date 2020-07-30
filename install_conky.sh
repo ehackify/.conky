@@ -8,7 +8,7 @@ then
 
 fi
 #
-git clone https://github.com/prasanthc41m/.conky.git
+git clone https://github.com/ehackify/.conky.git
 chmod -R +x ~/.conky/*
 #
 crontab <<EOF
