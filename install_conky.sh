@@ -1,6 +1,6 @@
 #!/bin/bash
 #Conky for eHackify with love c41m
-apt install conky -y
+sudo apt install conky -y
 #
 if [[ -d "$HOME/.conky/" ]]
 then
@@ -12,7 +12,7 @@ git clone https://github.com/prasanthc41m/.conky.git
 chmod -R +x ~/.conky/*
 #
 crontab <<EOF
-@reboot /root/.conky/conky-startup.sh
+@reboot ~/.conky/conky-startup.sh
 EOF
 #
 echo "$(tput setaf 11)Conky will start in 20s and added to startup!!!$(tput sgr0)"
